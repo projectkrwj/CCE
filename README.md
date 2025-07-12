@@ -13,3 +13,14 @@ W3 (D‑14 ~ D‑8)	멀티 카테고리	웹: PortSwigger all‑labs에서 CSRF
 
 
 W4 (D‑7 ~ D‑1)	실전 최적화	모의 예선(9 h 풀타임) 금요일 실시 → 점수·타임라인 기록. 남은 기간 = 오답 복기 + 치트시트 v1.0 확정판.	• 인프라 리허설: 동일 네트워크, 한글·영문 키보드 단축키 체크. • 멘탈·체력 관리: 수면 리듬 대회 시간대에 맞춤.	▸ 모의전 점수 ≥ 작년 예선 합격컷 120% 목표
+
+
+
+첫번째 도전과제
+cd ~/pwn || mkdir ~/pwn && cd ~/pwn
+wget https://ropemporium.com/binary/ret2win
+chmod +x ret2win
+gdb ./ret2win
+이걸 붙여넣기 하고
+https://ropemporium.com/ 여기 들어가서 ret2win문제풀이. 풀면 다른문제도. 만약 너무 처음이라 헷갈린다 -- 그냥 구글에서 ret2win writeup이라고 친 다음에 답 확인하고 왜 그런지만 학습하면 됨.
+2~3문제 하고 나면 약간 감 잡힐수도?
