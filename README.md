@@ -18,9 +18,14 @@ W4 (D‑7 ~ D‑1)	실전 최적화	모의 예선(9 h 풀타임) 금요일 �
 
 첫번째 도전과제
 cd ~/pwn || mkdir ~/pwn && cd ~/pwn
+
 wget https://ropemporium.com/binary/ret2win
+
 chmod +x ret2win
+
 gdb ./ret2win
+
 이걸 붙여넣기 하고
+
 https://ropemporium.com/ 여기 들어가서 ret2win문제풀이. 풀면 다른문제도. 만약 너무 처음이라 헷갈린다 -- 그냥 구글에서 ret2win writeup이라고 친 다음에 답 확인하고 왜 그런지만 학습하면 됨.
 2~3문제 하고 나면 약간 감 잡힐수도?
