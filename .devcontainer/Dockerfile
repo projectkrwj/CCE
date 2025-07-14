@@ -9,3 +9,6 @@ RUN apt update && apt install -y \
     tmux unzip
 
 RUN pip3 install --upgrade pwntools
+
+# GEF 설치
+RUN curl -fsSL https://gef.blah.cat/sh | bash
