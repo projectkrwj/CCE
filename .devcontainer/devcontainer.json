@@ -1,14 +1,16 @@
 {
-  "name": "CCE Training Env",
+  "name": "Ubuntu 20.04 + pwntools + GEF",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash"
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
   "extensions": [
     "ms-vscode.cpptools",
+    "ms-vscode.cmake-tools",
     "ms-python.python"
   ],
-  "postCreateCommand": "./setup.sh"
+  "postCreateCommand": "echo 'source ~/.gef.rc' >> ~/.gdbinit",
+  "remoteUser": "root"
 }
