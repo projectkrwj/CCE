@@ -1,16 +1,18 @@
 {
-  "name": "Ubuntu 20.04 + pwntools + GEF",
+  "name": "CCE Pwndbg Dev",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
-  "extensions": [
-    "ms-vscode.cpptools",
-    "ms-vscode.cmake-tools",
-    "ms-python.python"
-  ],
-  "postCreateCommand": "echo 'source ~/.gef.rc' >> ~/.gdbinit",
-  "remoteUser": "root"
+  "postCreateCommand": "echo '[✓] CCE 환경이 준비되었습니다.'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python"
+      ]
+    }
+  }
 }
