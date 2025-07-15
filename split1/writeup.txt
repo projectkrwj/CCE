@@ -20,3 +20,15 @@ p.send(payload)
 p.interactive()
 
 이렇게 해결하면 됨.
+
+
+새로 안 구문들
+ROPgadget --binary ./split | grep "pop rdi"
+
+file offset확보 위해
+strings -t x -a ./split | grep "/bin/cat flag.txt"
+
+가상주소 ELF내부주소 계산
+readelf -S ./split | grep "\.rodata"
+
+이런식으로 쓰진 않았지만 구문들이 좀 있다
