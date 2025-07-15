@@ -1,0 +1,9 @@
+context	현재 레지스터/스택/디스어셈블 정보 보기
+telescope $rsp	스택 덤프 보기 (tel)
+search "/bin/cat"	바이너리 내 문자열 검색
+x/s <주소>	문자열 출력 (x/s 0x...)
+piebase, vmmap	메모리 맵, PIE 오프셋 확인
+rop	ROP 가젯 자동 탐색
+heap, heapbins	힙 레이아웃 확인 (fastbin 등)
+start	바이너리 진입점부터 실행 (break main 아님!)
+run <<< $(python3 -c '...')	payload 입력 실행 시 사용
