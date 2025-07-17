@@ -29,4 +29,20 @@ gdb ./ret2win
 이걸 붙여넣기 하고
 
 https://ropemporium.com/ 여기 들어가서 ret2win문제풀이. 풀면 다른문제도. 만약 너무 처음이라 헷갈린다 -- 그냥 구글에서 ret2win writeup이라고 친 다음에 답 확인하고 왜 그런지만 학습하면 됨.
-2~3문제 하고 나면 약간 감 잡힐수도?
+2~3문제 하고 나면 약간 감 잡힐수도?    --완. 문제 write4 완료
+
+다음 도전과제는 
+pwn.college Module 10 - 실전에서 자주 나오는 NX우회 + shellcode유형
+ROP -> shellcode 연계 감각이 생길 수 있음. Stack pivot, mmap, syscall조합은 실전에서 자주 나옴
+ECB-to-shellcode easy -> hard -> Heaven's Gate -> Heaven's Vault
+
+
+다음 도전과제는 Ghidra 실전화, Crackmes.one 3~5점 난이도.
+Ghidra + pwndbg 연동하여 연습하는 것 중요. 단순 password비교 -> 계산식 -> 심화된 anti-debug순으로 넘어가게 된대.
+팁으로 strip된 ELF나 이상한 입력 방식을 쓰는 경우 log찍는 것이 중요.
+
+
+다음 도전과제는 포너블 응용 문제인 stack pivot / custom syscall / SROP 연습
+fake stack을 만들어 rsp를 이동 / Sigreturn frame만들고 syscall 직접호출 / read@plt -> .bss에 fake구조체 -> call구조
+pwnable.kr, pwn.college, CTFtime에서 ret2csu, ret2libc, pivot 태그 문제
+CTF writeup 키워드로 Sigreturn, SROP, ret2csu 검색
