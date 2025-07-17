@@ -35,6 +35,7 @@ https://ropemporium.com/ 여기 들어가서 ret2win문제풀이. 풀면 다른�
 pwn.college Module 10 - 실전에서 자주 나오는 NX우회 + shellcode유형
 ROP -> shellcode 연계 감각이 생길 수 있음. Stack pivot, mmap, syscall조합은 실전에서 자주 나옴
 ECB-to-shellcode easy -> hard -> Heaven's Gate -> Heaven's Vault
+https://pwn.college/intro-to-cybersecurity/integrated-security 여기 들어가서 하기.
 
 
 다음 도전과제는 Ghidra 실전화, Crackmes.one 3~5점 난이도.
