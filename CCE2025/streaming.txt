@@ -1,0 +1,6 @@
+Can you Exploit Windows Kernel?
+Bypass XFG and take Evil Debug Privilege
+Please change PLEASE_CHANGE_ME_TO_windows.qcow2 to windows.qcow2 from image.7z.
+VM Image Download: https://cce2025-prob.s3.ap-northeast-2.amazonaws.com/image.7z
+image.7z Password: c1d5b98a35d126c234639f1456f87987dfd18aae8b3091927d250f1a15bc03cb
+nc 158.247.218.206 1339
